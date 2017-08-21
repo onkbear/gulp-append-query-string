@@ -1,0 +1,14 @@
+{
+  "name": "gulp-append-query-string",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "onkbear",
+  "license": "MIT",
+  "dependencies": {
+    "readable-stream": "^2.3.3"
+  }
+}
