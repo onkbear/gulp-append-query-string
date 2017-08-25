@@ -6,6 +6,10 @@
   "scripts": {
     "lint": "eslint --ext .js ."
   },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/onkbear/gulp-append-query-string"
+  },
   "author": "onkbear",
   "license": "MIT",
   "dependencies": {
