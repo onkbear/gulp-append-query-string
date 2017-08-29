@@ -17,13 +17,13 @@ $ npm install gulp-query-string --save-dev
 const appendQueryString = require('gulp-append-query-string');
 
 gulp.task('default', () => {
-  gulp.src('dist/**/*')
+  gulp.src('index.html')
     .pipe(appendQueryString())
-    .pipe(gulp.dest('dist'));
+    .pipe(gulp.dest('.'));
 });
 ```
 
-Finding link and script tags and append query string at the end of path.
+Finding link and script tags and append query string (random) at the end of path.
 
 ### Before
 
