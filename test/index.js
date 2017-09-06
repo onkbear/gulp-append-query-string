@@ -20,3 +20,23 @@ test('append query string', async t => {
 
   t.true(file[0].contents.length === buf.length + 9 * 2)
 })
+
+test('append query string only CSS', async t => {
+  const {buf, stream} = await appendQueryString({
+    css: true,
+    js: false
+  })
+  const file = await getStream.array(stream)
+
+  t.true(file[0].contents.length === buf.length + 9)
+})
+
+test('append query string only JS', async t => {
+  const {buf, stream} = await appendQueryString({
+    css: false,
+    js: true
+  })
+  const file = await getStream.array(stream)
+
+  t.true(file[0].contents.length === buf.length + 9)
+})
