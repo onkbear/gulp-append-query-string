@@ -2,7 +2,6 @@
 
 [![Build Status](https://travis-ci.org/onkbear/gulp-append-query-string.svg?branch=master)](https://travis-ci.org/onkbear/gulp-append-query-string)
 [![npm version](https://badge.fury.io/js/gulp-append-query-string.svg)](https://badge.fury.io/js/gulp-append-query-string)
-[![Dependency Status](https://gemnasium.com/badges/github.com/onkbear/gulp-append-query-string.svg)](https://gemnasium.com/github.com/onkbear/gulp-append-query-string)
 [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE)
 
 Preventing caching of CSS / JS files
@@ -23,7 +22,7 @@ gulp.task('default', () => {
 });
 ```
 
-Finding link and script tags and append query string (random) at the end of path.
+Finding link and script tags then, append query string (random) to the end of path.
 
 ### Before
 
