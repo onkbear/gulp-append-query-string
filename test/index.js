@@ -21,6 +21,15 @@ test('append query string', async t => {
   t.true(file[0].contents.length === buf.length + 9 * 2)
 })
 
+test('append long query string', async t => {
+  const {buf, stream} = await appendQueryString({
+    length: 512
+  })
+  const file = await getStream.array(stream)
+
+  t.true(file[0].contents.length === buf.length + 513 * 2)
+})
+
 test('append query string only CSS', async t => {
   const {buf, stream} = await appendQueryString({
     css: true,

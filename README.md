@@ -46,11 +46,16 @@ gulp.task('default', () => {
   gulp.src('dist/**/*')
     .pipe(appendQueryString({
       css: false,   // default: true
-      js: false     // default: true
+      js: false,    // default: true
+      length: 16    // default: 8
     }))
     .pipe(gulp.dest('dist'));
 });
 ```
+
+- `css` - Append to css (default: true)
+- `js` - Append to js (default: true)
+- `length` - Length of query (default: 8)
 
 ## License
 

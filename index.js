@@ -1,11 +1,22 @@
 'use strict'
 
-var Transform = require('readable-stream/transform')
+const Transform = require('readable-stream/transform')
 
-module.exports = function (options) {
-  if (options === undefined) {
-    options = {}
+function appendQueryString (contents, type, query) {
+  const search = new RegExp('\\.' + type + '"', 'g')
+  const replacement = '.' + type + '?' + query + '"'
+  return Buffer.from(String(contents).replace(search, replacement))
+}
+
+function createRandomString (length) {
+  let str = ''
+  while (str.length < length) {
+    str += Math.random().toString(36).substr(2)
   }
+  return str.substr(0, length)
+}
+
+module.exports = function (options = {}) {
   return new Transform({
     objectMode: true,
     transform: function appendQueryStringTransform (file, enc, cb) {
@@ -13,17 +24,12 @@ module.exports = function (options) {
         return cb(null, file)
       }
 
-      function appendQueryString (contents, type, query) {
-        const search = new RegExp('\\.' + type + '"', 'g')
-        const replacement = '.' + type + '?' + query + '"'
-        return Buffer.from(String(contents).replace(search, replacement))
-      }
-
       const isCSS = 'css' in options ? options.css : true
       const isJS = 'js' in options ? options.js : true
+      const length = 'length' in options ? options.length : 8
 
       if (file.isBuffer()) {
-        const query = Math.random().toString(36).slice(-8)
+        const query = createRandomString(length)
         if (isCSS) {
           file.contents = appendQueryString(file.contents, 'css', query)
         }
