@@ -17,14 +17,14 @@
     "readable-stream": "^2.3.6"
   },
   "devDependencies": {
-    "ava": "^0.22.0",
-    "eslint": "^4.19.1",
-    "eslint-config-standard": "^10.2.1",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^5.2.1",
-    "eslint-plugin-promise": "^3.8.0",
-    "eslint-plugin-standard": "^3.1.0",
-    "get-stream": "^3.0.0",
-    "gulp-util": "^3.0.8"
+    "ava": "0.22.0",
+    "eslint": "4.19.1",
+    "eslint-config-standard": "10.2.1",
+    "eslint-plugin-import": "2.16.0",
+    "eslint-plugin-node": "5.2.1",
+    "eslint-plugin-promise": "3.8.0",
+    "eslint-plugin-standard": "3.1.0",
+    "get-stream": "3.0.0",
+    "gulp-util": "3.0.8"
   }
 }
