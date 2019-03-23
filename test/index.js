@@ -11,18 +11,18 @@ const appendQueryString = async plugins => {
     contents: buf
   }))
 
-  return {buf, stream}
+  return { buf, stream }
 }
 
 test('append query string', async t => {
-  const {buf, stream} = await appendQueryString()
+  const { buf, stream } = await appendQueryString()
   const file = await getStream.array(stream)
 
   t.true(file[0].contents.length === buf.length + 9 * 2)
 })
 
 test('append long query string', async t => {
-  const {buf, stream} = await appendQueryString({
+  const { buf, stream } = await appendQueryString({
     length: 512
   })
   const file = await getStream.array(stream)
@@ -31,7 +31,7 @@ test('append long query string', async t => {
 })
 
 test('append query string only CSS', async t => {
-  const {buf, stream} = await appendQueryString({
+  const { buf, stream } = await appendQueryString({
     css: true,
     js: false
   })
@@ -41,7 +41,7 @@ test('append query string only CSS', async t => {
 })
 
 test('append query string only JS', async t => {
-  const {buf, stream} = await appendQueryString({
+  const { buf, stream } = await appendQueryString({
     css: false,
     js: true
   })
