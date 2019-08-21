@@ -1,11 +1,12 @@
 'use strict'
 
 const Transform = require('readable-stream/transform')
+global.Buffer = require('buffer').Buffer
 
 function appendQueryString (contents, type, query) {
   const search = new RegExp('\\.' + type + '"', 'g')
   const replacement = '.' + type + '?' + query + '"'
-  return Buffer.from(String(contents).replace(search, replacement))
+  return global.Buffer.from(String(contents).replace(search, replacement))
 }
 
 function createRandomString (length) {

@@ -4,8 +4,13 @@ module.exports = {
     "commonjs": true,
     "es6": true
   },
-  "extends": "standard",
+  "extends": "eslint:recommended",
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
   "parserOptions": {
+    "ecmaVersion": 2018,
     "sourceType": "module"
   },
   "rules": {
@@ -20,9 +25,6 @@ module.exports = {
     "semi": [
       "error",
       "never"
-    ],
-    "no-console": 0
-  },
-  "globals": {
+    ]
   }
 };
