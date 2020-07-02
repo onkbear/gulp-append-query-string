@@ -18,7 +18,7 @@
   },
   "devDependencies": {
     "ava": "1.4.1",
-    "eslint": "6.6.0",
+    "eslint": "7.3.1",
     "get-stream": "3.0.0",
     "gulp-util": "3.0.8"
   }
