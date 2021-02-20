@@ -1,8 +1,8 @@
-import fs from 'fs'
-import gaqs from '..'
-import getStream from 'get-stream'
-import gutil from 'gulp-util'
-import test from 'ava'
+const fs = require('fs')
+const gaqs = require('..')
+const getStream = require('get-stream')
+const gutil = require('gulp-util')
+const test = require('ava')
 
 const appendQueryString = async plugins => {
   const buf = await fs.readFileSync('test/sample.html')
