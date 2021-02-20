@@ -14,7 +14,7 @@
   "author": "onkbear",
   "license": "MIT",
   "dependencies": {
-    "readable-stream": "^2.3.6"
+    "readable-stream": "^3.0.0"
   },
   "devDependencies": {
     "ava": "3.9.0",
